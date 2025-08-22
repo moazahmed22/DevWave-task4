@@ -13,7 +13,7 @@
       id="root"
       class="min-vh-100 row row-cols-1 row-cols-md-2 position-relative"
     >
-      <section id="registration" class="form-container bg-white">
+      <section id="registration" class="form-container bg-white d-md-flex">
         <div class="form">
           <h2 class="fs-3 text-capitalize fw-bold text-center m-0">
             create your account
@@ -66,7 +66,7 @@
           </p>
         </div>
       </section>
-      <section id="login" class="form-container bg-black">
+      <section id="login" class="form-container bg-black d-none d-md-flex">
         <div class="form">
           <h2 class="fs-3 text-capitalize fw-bold text-center text-white m-0">
             login to your account
@@ -112,18 +112,24 @@
           </p>
         </div>
       </section>
-      <div class="position-absolute bg-white h-100 p-0 overlay translate-100">
+      <div
+        class="position-absolute bg-white h-100 p-0 overlay translate-100 d-none d-md-block"
+      >
         <div class="grey-overlay h-100"></div>
       </div>
     </div>
-    <script differ>
+    <script defer>
       // handle overlay
       const overlay = document.querySelector(".overlay");
+      const loginSection = document.querySelector("#login");
+      const signupSection = document.querySelector("#registration");
       const toggleOverlay = () => {
         overlay.classList.toggle("translate-100");
+        loginSection.classList.toggle("d-none");
+        signupSection.classList.toggle("d-none");
       };
     </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./js/index.js" differ></script>
+    <script type="module" src="./js/index.js" defer></script>
   </body>
 </html>
