@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/awesome.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>profile</title>
+  </head>
+  <body>
+    <header class="d-flex">
+      <button class="btn btn-outline-danger ms-auto m-2">logout</button>
+    </header>
+    <div class="container">
+      <h2>welcome <span id="userName"></span>,</h2>
+      <p class="m-0 fs-5">email: <span id="userEmail"></span></p>
+      <p class="m-0 fs-5">password: <span id="userPassword"></span></p>
+    </div>
+  </body>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script differ>
+    // get logged user from the local storage
+    const user = JSON.parse(localStorage.getItem("loggedUser"));
+    // display user's data
+    document.getElementById("userName").textContent = user.userName;
+    document.getElementById("userEmail").textContent = user.email;
+    document.getElementById("userPassword").textContent = user.password;
+    // handle logout button
+    document.querySelector("button").addEventListener("click", () => {
+      localStorage.removeItem("loggedUser");
+      window.location = "index.html";
+    });
+  </script>
+</html>

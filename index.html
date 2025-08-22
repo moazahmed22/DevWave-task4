@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/awesome.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Registration System</title>
+  </head>
+  <body>
+    <div
+      id="root"
+      class="min-vh-100 row row-cols-1 row-cols-md-2 position-relative"
+    >
+      <section id="registration" class="form-container bg-white">
+        <div class="form">
+          <h2 class="fs-3 text-capitalize fw-bold text-center m-0">
+            create your account
+          </h2>
+          <p class="text-center welcome-message">
+            Fill the form below to create an account
+          </p>
+          <form class="d-flex flex-column mb-3">
+            <div class="mb-2">
+              <label for="floatingInput" class="fw-bold mb-1">Username</label>
+              <input
+                type="text"
+                class="form-control rounded-0"
+                id="floatingName"
+                placeholder="Username"
+              />
+            </div>
+            <p id="userNameError" class="text-danger"></p>
+            <div class="mb-2">
+              <label for="signupEmail" class="fw-bold mb-1"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control rounded-0"
+                id="signupEmail"
+                placeholder="name@example.com"
+              />
+            </div>
+            <p id="emailError" class="text-danger"></p>
+            <div class="mb-2">
+              <label for="signupPassword" class="fw-bold mb-1">Password</label>
+              <input
+                type="password"
+                class="form-control rounded-0"
+                id="signupPassword"
+                placeholder="•••••••"
+              />
+            </div>
+            <p id="passwordError" class="text-danger"></p>
+            <button class="btn btn-dark rounded-0">Sign in</button>
+          </form>
+          <p class="text-center welcome-message">
+            Already have an account?
+            <a
+              onclick="toggleOverlay()"
+              class="text-decoration-none text-black fw-bold"
+              >Log up</a
+            >
+          </p>
+        </div>
+      </section>
+      <section id="login" class="form-container bg-black">
+        <div class="form">
+          <h2 class="fs-3 text-capitalize fw-bold text-center text-white m-0">
+            login to your account
+          </h2>
+          <p class="text-center welcome-message">
+            Welcome back! Please enter your details
+          </p>
+          <form class="d-flex flex-column mb-3">
+            <div class="mb-2">
+              <label for="loginEmail" class="fw-bold mb-1 text-white"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control rounded-0"
+                id="loginEmail"
+                placeholder="name@example.com"
+              />
+            </div>
+            <p id="emailError" class="text-danger"></p>
+            <div class="mb-2">
+              <label for="loginPassword" class="fw-bold mb-1 text-white"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control rounded-0"
+                id="loginPassword"
+                placeholder="•••••••"
+              />
+            </div>
+            <p id="passwordError" class="text-danger"></p>
+            <button class="btn btn-dark rounded-0">Log in</button>
+            <p id="loginError" class="text-danger fw-bold mt-2"></p>
+          </form>
+          <p class="text-center welcome-message">
+            Don't have an account?
+            <a
+              onclick="toggleOverlay()"
+              class="text-decoration-none text-white fw-bold"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </section>
+      <div class="position-absolute bg-white h-100 p-0 overlay translate-100">
+        <div class="grey-overlay h-100"></div>
+      </div>
+    </div>
+    <script differ>
+      // handle overlay
+      const overlay = document.querySelector(".overlay");
+      const toggleOverlay = () => {
+        overlay.classList.toggle("translate-100");
+      };
+    </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/index.js" differ></script>
+  </body>
+</html>
